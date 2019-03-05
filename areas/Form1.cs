@@ -24,10 +24,35 @@ namespace areas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double length = double.Parse(textBox1.Text);
-            double width = double.Parse(textBox2.Text);
+            
+            double length = 0.0;
+            try
+            {
+                length = double.Parse(textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show(textBox1.Text + " is not an number");
+                length = 0.0;
+            }
+
+
+            double width = 0.0;
+            try
+            {
+                width = double.Parse(textBox2.Text);
+            }
+            catch
+            {
+                MessageBox.Show(textBox2.Text + " is not an number");
+                width = 0.0;
+            }
+
+
+
             double area = length * width;
             textBox3.AppendText(area.ToString());
+
         }
     }
 }
